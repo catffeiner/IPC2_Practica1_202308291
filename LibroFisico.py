@@ -4,14 +4,15 @@ class Fisico(MaterialBiblioteca):
     def __init__(self, titulo, autor, numero_ejemplar):
         super().__init__(titulo, autor)
         self.numero_ejemplar = numero_ejemplar
-        self.dias = 0
 
+    # Getters y Setters
     def get_numero_ejemplar(self):
         return self.numero_ejemplar
     
     def set_numero_ejemplar(self, numero_ejemplar):
         self.numero_ejemplar = numero_ejemplar
 
+    # Métodos
     def prestarMaterial(self):
         if not self.get_estadoprestamo():
             self.set_estadoprestamo(True)
@@ -22,8 +23,10 @@ class Fisico(MaterialBiblioteca):
 
     def devolverMaterial(self):
         if self.get_estadoprestamo():
+            dias = int(input("Ingrese el número de días que tuvo el libro: "))
             self.set_estadoprestamo(False)
-            if self.dias > 7:
+            self.set_dias(dias)
+            if dias > 7:
                 print("No devolvió el libro a tiempo")
             else:
                 print("Libro devuelto a tiempo")

@@ -1,5 +1,6 @@
 from LibroDigital import Digital
 from LibroFisico import Fisico
+    
 
 if __name__ == "__main__":
     libroDigital = None
@@ -75,6 +76,14 @@ if __name__ == "__main__":
                 else:
                     print("Material no encontrado")
 
+            elif opciongestion == "5":
+                continue
+            else:
+                print("Ingresar una opción valida")
+
         elif opcion == "3":
             print("Saliendo de la aplicación...")
             break
+
+        else:
+            print("Ingresar una opción valida")
